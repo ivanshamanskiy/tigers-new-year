@@ -49,7 +49,7 @@ onMounted(() => {
 }
 .starting-page-text {
     font-family: 'Belarus', sans-serif;
-    color: var(--base-red);
+    color: var(--base-yellow);
     font-weight: 400;
     font-size: 4.4em;
     line-height: 1.15em;
