@@ -1,10 +1,10 @@
 <template>
 
+<router-view>
 <starting-page v-show="startVisible"></starting-page>
 <page-second v-show="secondVisible" @goToThird="goToThird"></page-second>
 <page-third v-show="thirdVisible"></page-third>
-
-<router-view></router-view>
+</router-view>
 
 </template>
 
