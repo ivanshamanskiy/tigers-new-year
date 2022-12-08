@@ -28,9 +28,7 @@ animate('page-third', { opacity: ['0','1']}, { duration: 0.8, delay: 6.8 })
             methods: {
                 goToThird() {
                         this.secondVisible = false;
-                        setTimeout(() => {
-                            this.thirdVisible = 'true';
-                        }, 1500);
+                        this.thirdVisible = true;
                 }
             },
             mounted() {
