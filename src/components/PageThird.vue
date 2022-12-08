@@ -35,7 +35,9 @@
 </template>
 
 <script> 
+import { animate } from 'motion';
 
+animate('.page-third', { opacity: ['0','1']}, { duration: 0.8 });
 
 export default {
   data() {
@@ -133,7 +135,7 @@ export default {
       const path = window.location.pathname;
       return this.routes[path]['title']
     }
-  }
+  },
 }
 
 </script>
@@ -152,6 +154,11 @@ export default {
     align-items: center;
     flex-direction: column;
     position: relative;
+
+}
+
+.hidden {
+  display: none;
 }
 
   .page-content {
