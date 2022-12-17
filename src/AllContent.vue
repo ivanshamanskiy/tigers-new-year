@@ -2,34 +2,29 @@
 
 <starting-page v-show="startVisible"></starting-page>
 <page-second v-show="secondVisible" @goToThird="goToThird"></page-second>
-<page-third v-show="thirdVisible"></page-third>
 
 </template>
         
 <script>   
         
-import PageThird from './components/PageThird.vue';
+// import PageThird from './components/PageThird.vue';
 import PageSecond from './components/PageSecond.vue';
 import StartingPage from './components/StartingPage.vue';
 
-import { animate } from 'motion';
-
-animate('page-third', { opacity: ['0','1']}, { duration: 0.8, delay: 6.8 })
-
         export default {
-            components: { StartingPage, PageThird, PageSecond },
+            components: { StartingPage, PageSecond },
             data() {
                 return {
                     startVisible: true,
                     secondVisible: false,
-                    thirdVisible: false,
+                    // thirdVisible: false,
                 }
             },
             methods: {
-                goToThird() {
-                        this.secondVisible = false;
-                        this.thirdVisible = true;
-                }
+                // goToThird() {
+                //         this.secondVisible = false;
+                //         this.thirdVisible = true;
+                // }
             },
             mounted() {
                  setTimeout(() => {

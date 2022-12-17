@@ -21,7 +21,8 @@
             </div>
         </div>
 
-        <div class="card" @click="$emit('goToThird')">
+        <router-link :to="link">
+        <div class="card">
             <div class="line line-outer-0">
                 <div class="line line-outer-1">
                     <div class="corner-circle-1">
@@ -70,6 +71,7 @@
                 </div>
             </div>
         </div>
+        </router-link>
 
         <div class="btn--violet">
         <div class="wrapper-violet">
@@ -97,6 +99,7 @@
     <div class="circle" id="circle--3"><img src="../images/icons/moon_icon.svg" class="moon-icon" id="moon--3"></div>
     <div class="circle" id="circle--4"><img src="../images/icons/moon_icon.svg" class="moon-icon" id="moon--4"></div>
 </div>
+
 
 </template>
 
@@ -166,6 +169,22 @@ onMounted(() => {
 
     timeline([line8,line7,line6,line5, line4, line3, line2, line1, line0], {repeat: Infinity });
 })
+
+</script>
+
+<script>
+
+import paths from '../paths.json';
+
+export default {
+    computed: {
+        link() {
+            const pathNames = Object.getOwnPropertyNames(paths);
+            const num = Math.floor(Math.random() * (19 - 0 + 1) + 0);
+            return pathNames[num]
+        }
+    }
+}
 
 </script>
 

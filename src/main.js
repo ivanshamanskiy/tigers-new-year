@@ -17,5 +17,7 @@ app.component('starting-page', StartingPage);
 app.component('page-second', PageSecond);
 app.component('page-third', PageThird);
 
+router.isReady().then(function(){
+    app.mount('#app')
+});
 
-app.mount('#app')

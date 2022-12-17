@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="line-outer-0">
                     <div class="line-outer-1 image-container">
-                        <img :src="require(`../images/cards/${getUrl}.png`)" class="image">
+                        <img :src="require(`../images/cards/${getUrl}.jpg`)" class="image">
                     </div>
                 </div>
             </div>
@@ -34,107 +34,33 @@
 
 </template>
 
-<script> 
+<script setup> 
+
+import { onMounted } from 'vue';
 import { animate } from 'motion';
 
-animate('.page-third', { opacity: ['0','1']}, { duration: 0.8 });
+onMounted(() => {
+  animate('.page-third', { opacity: ['0','1']}, { duration: 1.2 });
+})
+
+
+</script>
+
+<script> 
+
+import paths from '../paths.json'
+console.log(paths)
 
 export default {
-  data() {
-    return {
-      routes: {
-        '/honeyvictory': {
-          'image': '41',
-          'title': 'Медовая сладость побед'
-        },
-        '/delightfulserenity': {
-          'image': '42',
-          'title': 'Восхитительное спокойствие'
-        },
-        '/sparklingpassion': {
-          'image': '43',
-          'title': 'Искристая страсть'
-        },
-        '/burningdesire': {
-          'image': '44',
-          'title': 'Жгучий интерес'
-        },
-        '/breezeofchange': {
-          'image': '45',
-          'title': 'Свежий бриз перемен'
-        },
-        '/spicyrelationship': {
-          'image': '46',
-          'title': 'Отношения с перчинкой'
-        },
-        '/refreshingdiscoveries': {
-          'image': '47',
-          'title': 'Освежающие открытия'
-        },
-        '/tightembrace': {
-          'image': '48',
-          'title': 'Крепкия объятия'
-        },
-        '/juicyfruitsoflabor': {
-          'image': '49',
-          'title': 'Сочные плоды трудов'
-        },
-        '/breezyrelax': {
-          'image': '50',
-          'title': 'Воздушный релакс'
-        },
-        '/vanilladreams': {
-          'image': '51',
-          'title': 'Ванильные грезы'
-        },
-        '/deliciousadvances': {
-          'image': '52',
-          'title': 'Аппетитные авансы'
-        },
-        '/crystaldreams': {
-          'image': '53',
-          'title': 'Хрустальные мечты'
-        },
-        '/dasingflights': {
-          'image': '54',
-          'title': 'Стремительные полеты'
-        },
-        '/crystaldeals': {
-          'image': '55',
-          'title': 'Кристальные сделки'
-        },
-        '/warmappreciation': {
-          'image': '56',
-          'title': 'Теплая благодарность'
-        },
-        '/goldensummer': {
-          'image': '57',
-          'title': 'Золотое лето'
-        },
-        '/healinghope': {
-          'image': '58',
-          'title': 'Целительная надежда'
-        },
-        '/etherealluck': {
-          'image': '59',
-          'title': 'Неземная удача'
-        },
-        '/captivationpassion': {
-          'image': '60',
-          'title': 'Пленительное увлечение'
-        }
-      }
-    }
-  },
   computed: {
     getUrl() {
       const path = window.location.pathname;
-      return this.routes[path]['image'];
+      return paths[path]['image'];
     },
     getTitle() {
       const path = window.location.pathname;
-      return this.routes[path]['title']
-    }
+      return paths[path]['title']
+    },
   },
 }
 
