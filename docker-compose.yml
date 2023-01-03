@@ -1,0 +1,14 @@
+version: '2.3'
+
+services:
+  vue-app:
+    restart: "no"
+    container_name: vue-app
+    mem_limit: 8G
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vue-app:latest
+    command: bash -c "npm run serve"
+    ports:
+      - 8080:8080
