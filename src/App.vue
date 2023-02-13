@@ -1,12 +1,8 @@
-<template>  
-
-<router-view>
-</router-view>
-
+<template>
+  <router-view> </router-view>
 </template>
 
 <style>
-
 .fade-button-enter-from,
 .fade-button-leave-to {
   opacity: 0;
@@ -24,8 +20,4 @@
 .fade-button-leave-from {
   opacity: 1;
 }
-
 </style>
-
-
-
